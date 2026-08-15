@@ -102,53 +102,17 @@ These modules are available across most commands (`core list`, `core install`, `
 
 ---
 
-## AI Agents
+## AI Agent
 
-The `ai` module installs AI-powered coding agents and assistants. Install all agents or pick specific ones with `--flag`:
+The `ai` module installs **OpenCode** — an open-source AI coding agent for your terminal.
 
 ```bash
-core install ai                    # Install all agents
-core install ai --opencode --ollama  # Install only OpenCode and Ollama
+core install ai                    # Install OpenCode
 ```
 
-| Agent | Flag | Description |
-|-------|------|-------------|
-| **Qwen Code** | `--qwen-code` | Alibaba's AI coding assistant |
-| **Gemini CLI** | `--gemini-cli` | Google's AI assistant with Gemini |
-| **Claude Code** | `--claude-code` | Anthropic's CLI tool with Claude AI |
-| **Mistral Vibe** | `--mistral-vibe` | Command-line coding assistant powered by Mistral's models |
-| **OpenClaude** | `--openclaude` | Open source Claude Code alternative |
-| **OpenClaw** | `--openclaw` | Personal AI Assistant |
-| **Ollama** | `--ollama` | Run open-source LLMs locally on Termux |
-| **Codex CLI** | `--codex` | Coding agent from OpenAI that runs locally on your computer |
-| **OpenCode** | `--opencode` | Open-source agent that helps you write code in your terminal |
-| **Qoder** | `--qoder` | A terminal-native AI coding partner—and an agent engine you can build on |
-| **KiloCode CLI** | `--kilocode-cli` | The open source coding agent for building with AI in VS Code, JetBrains, or the CLI |
-| **Cactus Needle** | `--cactus-needle` | 26M function-call model for tool-call generation — inference and finetuning from the terminal |
-| **KeelCode** | `--keelcode` | Hosted coding agent for your terminal — inspect a project, edit files, run commands, and verify its work |
-| **Kimchi** | `--kimchi` | Terminal coding agent powered by Kimchi's multi-model orchestration |
-| **MiMoCode** | `--mimocode` | Xiaomi's AI coding agent — fast, local, and open-source |
-| **Engram** | `--engram` | Persistent memory system for coding agents |
-| **CodeGraph** | `--codegraph` | Analyzes your codebase structure and dependencies |
-| **Pi Coding Agent** | `--pi` | Minimal terminal coding harness — adapt Pi to your workflows |
-| **Antigravity CLI** | `--antigravity-cli` | Lightweight, terminal-first surface for Antigravity agents |
-| **MiniMax CLI** | `--minimax-cli` | Generate text, images, video, speech, and music from the terminal |
-| **Oh-My-Pi** | `--oh-my-pi` | Autonomous coding agent that learns your codebase and writes production-ready code |
-| **Gentle AI** | `--gentle-ai` | Ecosystem, Frameworks, Workflows for AI coding agents |
-| **Gentleman Guardian Angel** | `--gga` | Provider-agnostic AI code review for every commit |
-| **Hermes Agent** | `--hermes-agent` | The self-improving AI agent built by Nous Research |
-| **Kimi Code** | `--kimi-code` | Kimi Code CLI — The Starting Point for Next-Gen Agents |
-| **Command Code** | `--command-code` | The coding agent that learns your coding taste |
-| **Freebuff** | `--freebuff` | A 100% free coding agent, right from your terminal |
-| **Context7** | `--ctx7` | Live documentation provider for AI coding agents |
-| **OpenSpec** | `--openspec` | Spec-Driven Development framework for AI coding agents |
-| **SuperCode CLI** | `--supercode` | Open source SWE agent — free models included, or bring your own |
-| **Cline CLI** | `--cline` | The open source coding agent in your IDE and terminal |
-| **AMP Code CLI** | `--ampcode` | AMP — coding agent by Sourcegraph for the terminal |
-| **Cursor CLI** | `--cursor-cli` | Deliver code with agents directly from your terminal |
-| **Droid Factory** | `--droid-factory` | Factory's AI coding agent — droid CLI for the terminal |
-| **Hugging Face CLI** | `--hugging-face` | Official Hugging Face Hub CLI — download, upload, and manage models, datasets, Spaces, buckets, and Jobs |
-| **Cactus Compute** | `--cactus` | Cactus Engine CLI — hybrid edge-cloud AI inference engine for mobile, wearable, and edge devices (cactus-compute) |
+| Agent | Description |
+|-------|-------------|
+| **OpenCode** | Open-source agent that helps you write code in your terminal |
 
 ---
 
@@ -399,18 +363,9 @@ All modules from [Common Modules](#common-modules) are valid targets.
 **Install entire module:**
 
 ```bash
-core install ai               # Install all AI tools
+core install ai               # Install OpenCode
 core install db               # Install all databases
 core install dev              # Install all development tools
-```
-
-**Install specific tools:**
-
-```bash
-core install ai --qwen-code --ollama          # Install only Qwen Code and Ollama
-core install db --postgresql --sqlite         # Install only PostgreSQL and SQLite
-core install dev --gh --fzf --jq              # Install only gh, fzf, and jq
-core install npm --typescript --prettier      # Install only TypeScript and Prettier
 ```
 
 > **Tip:** Run `core list <module>` to see all available tools and their flags.
@@ -434,19 +389,11 @@ In addition to all [Common Modules](#common-modules), `core update` also support
 |--------|-------------|
 | `core` | Core-Termux framework only |
 
-**Update entire module:**
+**Update module:**
 
 ```bash
-core update ai               # Update all AI tools
+core update ai               # Update OpenCode
 core update db               # Update all databases
-```
-
-**Update specific tools:**
-
-```bash
-core update ai --qwen-code --ollama          # Update only Qwen Code and Ollama
-core update db --postgresql --sqlite         # Update only PostgreSQL and SQLite
-core update dev --gh --fzf --jq             # Update only gh, fzf, and jq
 ```
 
 ---
@@ -463,12 +410,11 @@ core uninstall <target> --tool1 --tool2  # Uninstall specific tools
 
 In addition to all [Common Modules](#common-modules), `core uninstall` supports per-module and per-tool removal. No "uninstall all" — remove only what you need.
 
-**Uninstall specific tools:**
+**Uninstall module:**
 
 ```bash
-core uninstall ai --qwen-code --ollama        # Uninstall only Qwen Code and Ollama
-core uninstall db --postgresql --sqlite       # Uninstall only PostgreSQL and SQLite
-core uninstall dev --gh --fzf                 # Uninstall only gh and fzf
+core uninstall ai             # Uninstall OpenCode
+core uninstall db             # Uninstall all databases
 ```
 
 ---
@@ -485,12 +431,11 @@ core reinstall <target> --tool1 --tool2  # Reinstall specific tools
 
 In addition to all [Common Modules](#common-modules), `core reinstall` supports per-module and per-tool reinstallation. No "reinstall all".
 
-**Reinstall specific tools:**
+**Reinstall module:**
 
 ```bash
-core reinstall ai --opencode --ollama       # Reinstall only OpenCode and Ollama
-core reinstall db --postgresql --sqlite     # Reinstall only PostgreSQL and SQLite
-core reinstall dev --gh --fzf               # Reinstall only gh and fzf
+core reinstall ai             # Reinstall OpenCode
+core reinstall db             # Reinstall all databases
 ```
 
 ---
@@ -1150,21 +1095,19 @@ core install shell
 core install npm
 ```
 
-### Install specific tools within a module
+### Install modules
 
 ```bash
-core list ai                                    # See available AI tools
-core install ai --qwen-code --ollama            # Install only Qwen Code and Ollama
-core install dev --gh --fzf --jq                # Install only gh, fzf, and jq
-core install npm --typescript --prettier        # Install only TypeScript and Prettier
+core install ai               # Install OpenCode
+core install db               # Install databases
+core install dev              # Install dev tools
 ```
 
 ### Reinstall
 
 ```bash
-core reinstall ai             # Reinstall all AI agents
+core reinstall ai             # Reinstall OpenCode
 core reinstall shell          # Reinstall ZSH + plugins
-core reinstall ai --opencode --ollama  # Reinstall specific tools
 ```
 
 ### Configure Next.js project
@@ -1190,20 +1133,20 @@ core pg stop              # Stop
 ```bash
 core update core          # Framework only
 core update shell         # ZSH plugins only
-core update ai --qwen     # Specific AI tool only
+core update ai            # Update OpenCode
 ```
 
 ### Uninstall
 
 ```bash
 core uninstall npm        # Remove Node.js modules
-core uninstall ai --ollama   # Remove only Ollama
+core uninstall ai         # Remove OpenCode
 ```
 
 ### List available tools
 
 ```bash
-core list ai              # List all AI tools and their status
+core list ai              # List AI tools
 core list dev             # List all development tools
 core list db              # List all databases
 ```
